@@ -127,9 +127,9 @@
 
         <!-- Size Category Filters -->
         <div class="category-tabs">
-            <button class="tab-btn active" onclick="switchCategory('5ml')">5ml Testers</button>
-            <button class="tab-btn" onclick="switchCategory('15ml')">15ml Tester</button>
-            <button class="tab-btn" onclick="switchCategory('50ml')">50ml Perfume</button>
+            <button class="tab-btn active" onclick="switchCategory('5ml', this)">5ml Testers</button>
+            <button class="tab-btn" onclick="switchCategory('15ml', this)">15ml Tester</button>
+            <button class="tab-btn" onclick="switchCategory('50ml', this)">50ml Perfume</button>
         </div>
 
         <!-- Product Cards Grid -->
@@ -186,10 +186,12 @@
             }
         ];
 
-        function switchCategory(size) {
+        function switchCategory(size, btnElement) {
             const tabs = document.querySelectorAll('.tab-btn');
             tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('icon-btn') || event.target.classList.add('active');
+            if(btnElement) {
+                btnElement.classList.add('active');
+            }
 
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
@@ -197,9 +199,12 @@
             products.forEach(p => {
                 const price = p.prices[size];
                 
+                // Yahan 15ml ke liye exact '15ml tester.jpeg' set kar diya hai
                 let displayImg = p.img;
-                if(size === '5ml' || size === '15ml') {
+                if(size === '5ml') {
                     displayImg = "Gemini_Generated_Image_l2hud0l2hud0l2hu.jpeg";
+                } else if(size === '15ml') {
+                    displayImg = "15ml tester.jpeg";
                 }
 
                 const msg = encodeURIComponent(`Hello AS5 Fragrance, I want to order ${p.name} (${size}) for ${price}`);
@@ -225,7 +230,7 @@
         }
 
         // Initial Page Load
-        switchCategory('5ml');
+        switchCategory('5ml', document.querySelector('.tab-btn'));
     </script>
 </body>
 </html>
