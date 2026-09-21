@@ -41,8 +41,6 @@
         .cta-container { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; width: 100%; max-width: 250px; }
         .btn-gold { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary), var(--gold-light)); color: #000; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
-        .btn-outline { border: 1px solid var(--gold-primary); color: var(--gold-primary); background: transparent; }
-        .btn-outline:hover { background: var(--gold-primary); color: #000; }
 
         /* Trust Badges Bar */
         .features { display: flex; justify-content: center; gap: 25px; padding: 18px 15px; background: #0c0c0c; border-bottom: 1px solid #1c1c1c; flex-wrap: wrap; text-align: center; }
@@ -155,7 +153,6 @@
     </footer>
 
     <script>
-        // 6 Perfumes List with exact image filenames
         const products = [
             { 
                 name: "Rose Noir", 
@@ -190,24 +187,19 @@
         ];
 
         function switchCategory(size) {
-            // Active Tab Style Change
             const tabs = document.querySelectorAll('.tab-btn');
             tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
+            event.target.classList.add('icon-btn') || event.target.classList.add('active');
 
-            // Render Product Cards
             const grid = document.getElementById('product-grid');
             grid.innerHTML = '';
 
             products.forEach(p => {
                 const price = p.prices[size];
                 
-                // Image handling: 5ml uses shared image, 15ml uses tester.jpeg, 50ml uses individual product image
                 let displayImg = p.img;
-                if(size === '5ml') {
+                if(size === '5ml' || size === '15ml') {
                     displayImg = "Gemini_Generated_Image_l2hud0l2hud0l2hu.jpeg";
-                } else if(size === '15ml') {
-                    displayImg = "tester.jpeg";
                 }
 
                 const msg = encodeURIComponent(`Hello AS5 Fragrance, I want to order ${p.name} (${size}) for ${price}`);
