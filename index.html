@@ -39,8 +39,11 @@
         
         /* Banner Action Buttons */
         .cta-container { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; width: 100%; max-width: 250px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 22px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; }
         .btn-gold { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary), var(--gold-light)); color: #000; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
+        .btn-social { background: #121212; border: 1px solid var(--card-border); color: #fff; }
+        .btn-social:hover { border-color: var(--gold-primary); background: #1a1a1a; }
+        .btn-social i { font-size: 1rem; color: var(--gold-primary); }
 
         /* Trust Badges Bar */
         .features { display: flex; justify-content: center; gap: 25px; padding: 18px 15px; background: #0c0c0c; border-bottom: 1px solid #1c1c1c; flex-wrap: wrap; text-align: center; }
@@ -108,6 +111,8 @@
         <p class="tagline">Luxury • Long-Lasting • Artisanal</p>
         <div class="cta-container">
             <a href="https://wa.me/923111032801?text=Hello%20AS5%20Fragrance,%20I%20want%20to%20order" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+            <a href="https://www.tiktok.com/@As5.fragrances" class="btn btn-social" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://www.instagram.com/As5.fragrances" class="btn btn-social" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </header>
 
@@ -147,6 +152,8 @@
     <footer>
         <div class="footer-logo">AS5 FRAGRANCE</div>
         <div class="socials">
+            <a href="https://www.instagram.com/As5.fragrances" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@As5.fragrances" target="_blank"><i class="fab fa-tiktok"></i></a>
             <a href="tel:03111032801"><i class="fas fa-phone"></i></a>
         </div>
         <p class="copyright">&copy; 2026 AS5 Fragrance. All Rights Reserved.</p>
@@ -199,7 +206,6 @@
             products.forEach(p => {
                 const price = p.prices[size];
                 
-                // Yahan 15ml ke liye exact '15ml tester.jpeg' set kar diya hai
                 let displayImg = p.img;
                 if(size === '5ml') {
                     displayImg = "Gemini_Generated_Image_l2hud0l2hud0l2hu.jpeg";
