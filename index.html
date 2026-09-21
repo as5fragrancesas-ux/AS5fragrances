@@ -3,187 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AS5 FRAGRANCE | Premium Collection</title>
+    <title>AS5 FRAGRANCE | Official Store</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@1,600;1,800;1,900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@1,600;1,800;1,900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold-primary: #D4AF37;
             --gold-light: #F9E79F;
             --gold-dark: #AA7C11;
-            --bg-black: #050505;
+            --bg-black: #080808;
             --card-bg: #121212;
+            --card-border: rgba(212, 175, 55, 0.2);
             --text-light: #F5F5F5;
+            --text-muted: #A0A0A0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         html, body { width: 100%; overflow-x: hidden; background-color: var(--bg-black); color: var(--text-light); }
 
-        /* Top Announcement Bar */
-        .announcement { background: linear-gradient(90deg, #aa7c11, #d4af37, #aa7c11); color: #000; font-weight: 700; text-align: center; padding: 10px; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
+        /* Announcement Bar */
+        .top-bar { background: linear-gradient(90deg, #111, var(--gold-dark), var(--gold-primary), var(--gold-dark), #111); color: #000; font-weight: 700; text-align: center; padding: 9px 10px; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; }
 
-        /* Header / Hero Section */
-        header { padding: 50px 15px 40px; text-align: center; background: radial-gradient(circle at center, #1a160c 0%, #050505 100%); border-bottom: 1px solid rgba(212, 175, 55, 0.25); width: 100%; }
+        /* Sticky Navigation Header */
+        nav { position: sticky; top: 0; z-index: 999; background: rgba(8, 8, 8, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, #FFF, var(--gold-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; letter-spacing: 2px; }
+        .nav-btn { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary)); color: #000; padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
+        .nav-btn:hover { opacity: 0.9; transform: scale(1.03); }
+
+        /* Hero Banner Section */
+        header { padding: 50px 15px 35px; text-align: center; background: radial-gradient(circle at center, #1c170d 0%, var(--bg-black) 100%); border-bottom: 1px solid #1a1a1a; }
+        .brand-title { font-family: 'Cinzel', serif; font-style: italic; font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 900; background: linear-gradient(135deg, #FFF, var(--gold-primary), var(--gold-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: clamp(1px, 2vw, 5px); margin-bottom: 10px; word-wrap: break-word; }
+        .tagline { font-size: clamp(0.75rem, 2.5vw, 0.95rem); color: var(--text-muted); letter-spacing: clamp(1px, 1.5vw, 3px); text-transform: uppercase; margin-bottom: 25px; font-weight: 300; }
         
-        .brand-title { 
-            font-family: 'Cinzel', serif; 
-            font-style: italic; 
-            font-size: clamp(1.8rem, 7vw, 3.5rem); 
-            font-weight: 900; 
-            background: linear-gradient(135deg, #FFF, #D4AF37, #AA7C11); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
-            letter-spacing: clamp(1px, 1.5vw, 4px); 
-            margin-bottom: 10px; 
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2); 
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-        
-        .tagline { font-size: clamp(0.7rem, 2.5vw, 0.95rem); color: #b0b0b0; letter-spacing: clamp(1px, 1vw, 3px); text-transform: uppercase; margin-bottom: 30px; font-weight: 300; }
-        
-        /* Action Buttons Header */
+        /* Banner Action Buttons */
         .cta-container { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; width: 100%; max-width: 280px; }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; width: 100%; max-width: 250px; }
         .btn-gold { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary), var(--gold-light)); color: #000; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
-        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5); }
         .btn-outline { border: 1px solid var(--gold-primary); color: var(--gold-primary); background: transparent; }
         .btn-outline:hover { background: var(--gold-primary); color: #000; }
 
-        /* Features Bar */
-        .features { display: flex; justify-content: center; gap: 20px; padding: 20px 15px; background: #0a0a0a; border-bottom: 1px solid #1a1a1a; flex-wrap: wrap; text-align: center; }
-        .feature-item { color: #888; font-size: 0.8rem; display: flex; align-items: center; gap: 6px; letter-spacing: 0.5px; }
+        /* Trust Badges Bar */
+        .features { display: flex; justify-content: center; gap: 25px; padding: 18px 15px; background: #0c0c0c; border-bottom: 1px solid #1c1c1c; flex-wrap: wrap; text-align: center; }
+        .feature-item { color: #888; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px; }
         .feature-item i { color: var(--gold-primary); font-size: 1rem; }
 
-        /* Main Collection */
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 15px; }
-        .section-header { text-align: center; margin-bottom: 40px; }
-        .section-title { font-family: 'Cinzel', serif; font-style: italic; font-size: clamp(1.5rem, 5vw, 2.2rem); color: var(--gold-primary); letter-spacing: 2px; }
+        /* Category / Product Section */
+        .container { max-width: 1200px; margin: 0 auto; padding: 45px 15px; }
+        .section-header { text-align: center; margin-bottom: 30px; }
+        .section-title { font-family: 'Cinzel', serif; font-style: italic; font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--gold-primary); letter-spacing: 2px; }
         .section-subtitle { color: #666; font-size: 0.8rem; margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase; }
 
-        /* Product Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); border: 1px solid rgba(212, 175, 55, 0.2); border-radius: 16px; overflow: hidden; transition: all 0.4s ease; display: flex; flex-direction: column; position: relative; }
-        .card:hover { transform: translateY(-5px); border-color: var(--gold-primary); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25); }
-        
-        .card-img { height: 200px; background: radial-gradient(circle, #222 0%, #121212 100%); display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 1px solid rgba(212, 175, 55, 0.1); }
-        .card-img i { font-size: 4.5rem; color: rgba(212, 175, 55, 0.4); transition: all 0.3s ease; }
-        .card:hover .card-img i { color: var(--gold-primary); transform: scale(1.08); }
+        /* Size Filter Tabs */
+        .category-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 35px; flex-wrap: wrap; }
+        .tab-btn { background: #121212; border: 1px solid var(--card-border); color: #ccc; padding: 10px 22px; border-radius: 30px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+        .tab-btn:hover, .tab-btn.active { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary)); color: #000; border-color: transparent; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
 
-        .card-body { padding: 25px 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
-        .card-title { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.4rem; color: #fff; margin-bottom: 18px; letter-spacing: 1px; }
+        /* Product Cards Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; transition: all 0.4s ease; display: flex; flex-direction: column; position: relative; }
+        .card:hover { transform: translateY(-6px); border-color: var(--gold-primary); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25); }
+        
+        .card-img { height: 210px; background: radial-gradient(circle, #222 0%, #121212 100%); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(212, 175, 55, 0.1); position: relative; overflow: hidden; }
+        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .card:hover .card-img img { transform: scale(1.08); }
+        .card-img i { font-size: 4.5rem; color: rgba(212, 175, 55, 0.35); transition: all 0.3s ease; }
+        .card:hover .card-img i { color: var(--gold-primary); transform: scale(1.1); }
+
+        .card-body { padding: 22px 18px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
+        .card-title { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.4rem; color: #fff; margin-bottom: 8px; letter-spacing: 1px; }
+        .price-tag { font-size: 1.25rem; font-weight: 700; color: var(--gold-primary); margin-bottom: 18px; letter-spacing: 0.5px; }
         
         .buy-btn { width: 100%; padding: 12px; border-radius: 8px; background: transparent; color: var(--gold-primary); border: 1px solid var(--gold-primary); text-decoration: none; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
         .buy-btn:hover { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary)); color: #000; border-color: transparent; }
 
-        /* Floating Social Buttons */
-        .floating-socials { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 100; }
-        .social-float { width: 50px; height: 50px; border-radius: 50%; text-align: center; font-size: 24px; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; color: #fff; }
+        /* Floating Contact Buttons */
+        .floating-socials { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 1000; }
+        .social-float { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; color: #fff; transition: all 0.3s ease; }
         .whatsapp-float { background-color: #25d366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
         .tiktok-float { background-color: #000; border: 1px solid var(--gold-primary); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
         .social-float:hover { transform: scale(1.1); }
 
         /* Footer */
-        footer { background: #020202; padding: 35px 15px; text-align: center; border-top: 1px solid #1a1a1a; margin-top: 50px; }
-        .socials { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
-        .socials a { color: #888; font-size: 1.2rem; text-decoration: none; transition: color 0.3s; }
+        footer { background: #020202; padding: 40px 15px 30px; text-align: center; border-top: 1px solid #1a1a1a; margin-top: 50px; }
+        .footer-logo { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 15px; font-weight: 800; letter-spacing: 2px; }
+        .socials { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .socials a { color: #888; font-size: 1.3rem; text-decoration: none; transition: color 0.3s; }
         .socials a:hover { color: var(--gold-primary); }
         .copyright { color: #555; font-size: 0.75rem; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="announcement">✨ Free Delivery Across Pakistan ✨</div>
+    <div class="top-bar">✨ Free Cash On Delivery Nationwide ✨</div>
 
+    <!-- Sticky Navigation -->
+    <nav>
+        <a href="#" class="nav-logo">AS5 FRAGRANCE</a>
+        <a href="https://wa.me/923111032801" class="nav-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order</a>
+    </nav>
+
+    <!-- Hero Header -->
     <header>
         <h1 class="brand-title">AS5 FRAGRANCE</h1>
         <p class="tagline">Luxury • Long-Lasting • Artisanal</p>
         <div class="cta-container">
-            <a href="https://wa.me/923111032801?text=Hello%20AS5%20Fragrance,%20I%20want%20to%20order" class="btn btn-gold" target="_blank">
-                <i class="fab fa-whatsapp"></i> Order On WhatsApp
-            </a>
-            <a href="https://tiktok.com/@as5.fragrances" class="btn btn-outline" target="_blank">
-                <i class="fab fa-tiktok"></i> TikTok Profile
-            </a>
+            <a href="https://wa.me/923111032801?text=Hello%20AS5%20Fragrance,%20I%20want%20to%20order" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
+            <a href="https://tiktok.com/@as5.fragrances" class="btn btn-outline" target="_blank"><i class="fab fa-tiktok"></i> TikTok Profile</a>
         </div>
     </header>
 
+    <!-- Trust Badges -->
     <div class="features">
-        <div class="feature-item"><i class="fas fa-gem"></i> Premium Quality</div>
-        <div class="feature-item"><i class="fas fa-clock"></i> Long-Lasting</div>
+        <div class="feature-item"><i class="fas fa-gem"></i> Premium Oils</div>
+        <div class="feature-item"><i class="fas fa-clock"></i> 12+ Hours Lasting</div>
         <div class="feature-item"><i class="fas fa-truck"></i> Cash on Delivery</div>
     </div>
 
+    <!-- Main Store Section -->
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">The Signature Collection</h2>
-            <p class="section-subtitle">Exquisite Handcrafted Perfumes</p>
+            <p class="section-subtitle">Select Bottle Size Below</p>
         </div>
 
-        <div class="grid">
-            
-            <div class="card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-body">
-                    <h3 class="card-title">Savi-7</h3>
-                    <a href="https://wa.me/923111032801?text=I%20want%20to%20order%20Savi-7" class="buy-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
-                </div>
-            </div>
+        <!-- Size Category Filters -->
+        <div class="category-tabs">
+            <button class="tab-btn active" onclick="switchCategory('5ml')">5ml Testers</button>
+            <button class="tab-btn" onclick="switchCategory('15ml')">15ml Travel Spray</button>
+            <button class="tab-btn" onclick="switchCategory('50ml')">50ml Full Bottle</button>
+        </div>
 
-            <div class="card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-body">
-                    <h3 class="card-title">Rose Noir</h3>
-                    <a href="https://wa.me/923111032801?text=I%20want%20to%20order%20Rose%20Noir" class="buy-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-body">
-                    <h3 class="card-title">Desire Gold</h3>
-                    <a href="https://wa.me/923111032801?text=I%20want%20to%20order%20Desire%20Gold" class="buy-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-body">
-                    <h3 class="card-title">Oro Fusion</h3>
-                    <a href="https://wa.me/923111032801?text=I%20want%20to%20order%20Oro%20Fusion" class="buy-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-body">
-                    <h3 class="card-title">Murshid</h3>
-                    <a href="https://wa.me/923111032801?text=I%20want%20to%20order%20Murshid" class="buy-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-img"><i class="fas fa-wine-bottle"></i></div>
-                <div class="card-body">
-                    <h3 class="card-title">Velvet Rush</h3>
-                    <a href="https://wa.me/923111032801?text=I%20want%20to%20order%20Velvet%20Rush" class="buy-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
-                </div>
-            </div>
-
+        <!-- Product Cards Grid -->
+        <div class="grid" id="product-grid">
+            <!-- Cards rendering via JS below -->
         </div>
     </div>
 
-    <!-- Floating Social Buttons -->
+    <!-- Floating Quick Buttons -->
     <div class="floating-socials">
-        <a href="https://tiktok.com/@as5.fragrances" class="social-float tiktok-float" target="_blank">
-            <i class="fab fa-tiktok"></i>
-        </a>
-        <a href="https://wa.me/923111032801" class="social-float whatsapp-float" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+        <a href="https://tiktok.com/@as5.fragrances" class="social-float tiktok-float" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/923111032801" class="social-float whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 
+    <!-- Footer -->
     <footer>
+        <div class="footer-logo">AS5 FRAGRANCE</div>
         <div class="socials">
             <a href="https://instagram.com/as5.fragrances" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://tiktok.com/@as5.fragrances" target="_blank"><i class="fab fa-tiktok"></i></a>
@@ -192,5 +156,60 @@
         <p class="copyright">&copy; 2026 AS5 Fragrance. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        // 6 Perfumes List
+        const products = [
+            { name: "Velvet Rush", img: "velvet-rush.jpg" },
+            { name: "Rose Noir", img: "rose-noir.jpg" },
+            { name: "Desire Gold", img: "desire-gold.jpg" },
+            { name: "Oro Fusion", img: "oro-fusion.jpg" },
+            { name: "Murshid", img: "murshid.jpg" },
+            { name: "Savi-7", img: "savi7.jpg" }
+        ];
+
+        // Category Prices (Aap jab chahein yahan price badal sakte hain)
+        const prices = {
+            "5ml": "PKR 499",
+            "15ml": "PKR 1,199",
+            "50ml": "PKR 2,999"
+        };
+
+        function switchCategory(size) {
+            // Active Tab Style Change
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Render Product Cards
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            products.forEach(p => {
+                const price = prices[size];
+                const msg = encodeURIComponent(`Hello AS5 Fragrance, I want to order ${p.name} (${size}) for ${price}`);
+                
+                const card = `
+                    <div class="card">
+                        <div class="card-img">
+                            <i class="fas fa-wine-bottle"></i>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3 class="card-title">${p.name}</h3>
+                                <div class="price-tag">${price}</div>
+                            </div>
+                            <a href="https://wa.me/923111032801?text=${msg}" class="buy-btn" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Order ${size}
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += card;
+            });
+        }
+
+        // Initial Page Load
+        switchCategory('5ml');
+    </script>
 </body>
 </html>
