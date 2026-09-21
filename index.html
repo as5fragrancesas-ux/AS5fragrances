@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AS5 FRAGRANCE | Official Store</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@1,600;1,800;1,900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --gold-primary: #D4AF37;
-            --gold-light: #F9E79F;
+            --gold-light: #F3E79F;
             --gold-dark: #AA7C11;
-            --bg-black: #080808;
+            --bg-black: #0B0B0B;
             --card-bg: #121212;
             --card-border: rgba(212, 175, 55, 0.2);
             --text-light: #F5F5F5;
@@ -19,197 +19,224 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        html, body { width: 100%; overflow-x: hidden; background-color: var(--bg-black); color: var(--text-light); }
+        body { width: 100%; overflow-x: hidden; background-color: var(--bg-black); color: var(--text-light); }
 
-        /* Announcement Bar */
-        .top-bar { background: linear-gradient(90deg, #111, var(--gold-dark), var(--gold-primary), var(--gold-dark), #111); color: #000; font-weight: 700; text-align: center; padding: 9px 10px; font-size: 0.78rem; letter-spacing: 1.5px; text-transform: uppercase; }
-
-        /* Sticky Navigation Header */
-        nav { position: sticky; top: 0; z-index: 999; background: rgba(8, 8, 8, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212, 175, 55, 0.2); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.4rem; font-weight: 900; background: linear-gradient(135deg, #FFF, var(--gold-primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none; letter-spacing: 2px; }
-        .nav-btn { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary)); color: #000; padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; }
-        .nav-btn:hover { opacity: 0.9; transform: scale(1.03); }
-
-        /* Hero Banner Section */
-        header { padding: 50px 15px 35px; text-align: center; background: radial-gradient(circle at center, #1c170d 0%, var(--bg-black) 100%); border-bottom: 1px solid #1a1a1a; }
-        .brand-title { font-family: 'Cinzel', serif; font-style: italic; font-size: clamp(2rem, 7vw, 3.8rem); font-weight: 900; background: linear-gradient(135deg, #FFF, var(--gold-primary), var(--gold-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: clamp(1px, 2vw, 5px); margin-bottom: 10px; word-wrap: break-word; }
-        .tagline { font-size: clamp(0.75rem, 2.5vw, 0.95rem); color: var(--text-muted); letter-spacing: clamp(1px, 1.5vw, 3px); text-transform: uppercase; margin-bottom: 25px; font-weight: 300; }
+        /* Top Bar & Header */
+        .top-bar { background: linear-gradient(90deg, #111, var(--gold-dark), var(--gold-primary), var(--gold-dark), #111); color: #000; font-size: 0.8rem; font-weight: 700; text-align: center; padding: 8px 10px; letter-spacing: 1px; }
         
-        /* Banner Action Buttons */
-        .cta-container { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 26px; border-radius: 50px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; width: 100%; max-width: 250px; }
-        .btn-gold { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary), var(--gold-light)); color: #000; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3); }
-        .btn-outline { border: 1px solid var(--gold-primary); color: var(--gold-primary); background: transparent; }
-        .btn-outline:hover { background: var(--gold-primary); color: #000; }
+        header { position: sticky; top: 0; z-index: 999; background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--card-border); display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 1px solid var(--gold-primary); }
+        .nav-logo span { font-family: 'Cinzel', serif; font-size: 1.2rem; font-weight: 700; color: var(--gold-primary); letter-spacing: 1px; }
+        .nav-contact a { background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; transition: 0.3s; }
+        .nav-contact a:hover { background: var(--gold-primary); color: #000; }
 
-        /* Trust Badges Bar */
-        .features { display: flex; justify-content: center; gap: 25px; padding: 18px 15px; background: #0c0c0c; border-bottom: 1px solid #1c1c1c; flex-wrap: wrap; text-align: center; }
-        .feature-item { color: #888; font-size: 0.8rem; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px; }
-        .feature-item i { color: var(--gold-primary); font-size: 1rem; }
+        /* Hero Section */
+        .hero { padding: 40px 20px; text-align: center; background: radial-gradient(circle at center, #1c1700 0%, var(--bg-black) 100%); border-bottom: 1px solid var(--card-border); }
+        .hero-title { font-family: 'Cinzel', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; color: var(--gold-primary); margin-bottom: 10px; }
+        .hero-tagline { font-size: clamp(0.9rem, 2vw, 1.1rem); color: var(--text-muted); letter-spacing: 1.5px; margin-bottom: 25px; text-transform: uppercase; }
 
-        /* Category / Product Section */
-        .container { max-width: 1200px; margin: 0 auto; padding: 45px 15px; }
-        .section-header { text-align: center; margin-bottom: 30px; }
-        .section-title { font-family: 'Cinzel', serif; font-style: italic; font-size: clamp(1.6rem, 5vw, 2.2rem); color: var(--gold-primary); letter-spacing: 2px; }
-        .section-subtitle { color: #666; font-size: 0.8rem; margin-top: 5px; letter-spacing: 1.5px; text-transform: uppercase; }
+        /* Trust Badges */
+        .features { display: flex; justify-content: center; gap: 20px; padding: 15px; background: #111; border-bottom: 1px solid var(--card-border); flex-wrap: wrap; }
+        .feature-item { color: var(--gold-light); font-size: 0.85rem; display: flex; align-items: center; gap: 8px; letter-spacing: 0.5px; }
 
-        /* Size Filter Tabs */
-        .category-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 35px; flex-wrap: wrap; }
-        .tab-btn { background: #121212; border: 1px solid var(--card-border); color: #ccc; padding: 10px 22px; border-radius: 30px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
-        .tab-btn:hover, .tab-btn.active { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary)); color: #000; border-color: transparent; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
-
-        /* Product Cards Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; transition: all 0.4s ease; display: flex; flex-direction: column; position: relative; }
-        .card:hover { transform: translateY(-6px); border-color: var(--gold-primary); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25); }
+        /* Products Grid */
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 15px; }
+        .section-title { font-family: 'Cinzel', serif; font-size: clamp(1.6rem, 4vw, 2.2rem); color: var(--gold-primary); text-align: center; margin-bottom: 30px; letter-spacing: 1px; }
         
-        .card-img { height: 210px; background: radial-gradient(circle, #222 0%, #121212 100%); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(212, 175, 55, 0.1); position: relative; overflow: hidden; }
-        .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .card:hover .card-img img { transform: scale(1.08); }
-        .card-img i { font-size: 4.5rem; color: rgba(212, 175, 55, 0.35); transition: all 0.3s ease; }
-        .card:hover .card-img i { color: var(--gold-primary); transform: scale(1.1); }
-
-        .card-body { padding: 22px 18px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; text-align: center; }
-        .card-title { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.4rem; color: #fff; margin-bottom: 8px; letter-spacing: 1px; }
-        .price-tag { font-size: 1.25rem; font-weight: 700; color: var(--gold-primary); margin-bottom: 18px; letter-spacing: 0.5px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15); }
         
-        .buy-btn { width: 100%; padding: 12px; border-radius: 8px; background: transparent; color: var(--gold-primary); border: 1px solid var(--gold-primary); text-decoration: none; font-weight: 600; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
-        .buy-btn:hover { background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary)); color: #000; border-color: transparent; }
+        .card-img-wrap { height: 240px; background: radial-gradient(circle, #222 0%, #121212 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .card:hover .card-img-wrap img { transform: scale(1.08); }
+        
+        /* Out of Stock Styling */
+        .card.out-of-stock .card-img-wrap::after {
+            content: "OUT OF STOCK";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            color: #ff4d4d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            z-index: 2;
+        }
+        .card.out-of-stock .buy-btn {
+            background: #222;
+            border-color: #444;
+            color: #666;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
 
-        /* Floating Contact Buttons */
-        .floating-socials { position: fixed; bottom: 20px; right: 15px; display: flex; flex-direction: column; gap: 10px; z-index: 1000; }
-        .social-float { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; color: #fff; transition: all 0.3s ease; }
-        .whatsapp-float { background-color: #25d366; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
-        .tiktok-float { background-color: #000; border: 1px solid var(--gold-primary); box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
-        .social-float:hover { transform: scale(1.1); }
+        .card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-family: 'Cinzel', serif; font-size: 1.3rem; color: #fff; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px; }
+        
+        /* Pricing & Variants */
+        .price-box { margin: 12px 0; border-top: 1px dashed rgba(212,175,55,0.2); border-bottom: 1px dashed rgba(212,175,55,0.2); padding: 10px 0; }
+        .price-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; margin: 6px 0; color: var(--text-muted); }
+        .price-row span:last-child { color: var(--gold-light); font-weight: 600; }
+        
+        .buy-btn { width: 100%; padding: 12px; background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none; display: block; margin-top: 10px; }
+        .buy-btn:hover { background: var(--gold-primary); color: #000; box-shadow: 0 0 15px rgba(212,175,55,0.4); }
 
         /* Footer */
-        footer { background: #020202; padding: 40px 15px 30px; text-align: center; border-top: 1px solid #1a1a1a; margin-top: 50px; }
-        .footer-logo { font-family: 'Cinzel', serif; font-style: italic; font-size: 1.5rem; color: var(--gold-primary); margin-bottom: 15px; font-weight: 800; letter-spacing: 2px; }
-        .socials { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
-        .socials a { color: #888; font-size: 1.3rem; text-decoration: none; transition: color 0.3s; }
-        .socials a:hover { color: var(--gold-primary); }
-        .copyright { color: #555; font-size: 0.75rem; letter-spacing: 1px; }
+        footer { text-align: center; padding: 30px 20px; background: #070707; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 0.85rem; }
+        footer span { color: var(--gold-primary); }
     </style>
 </head>
 <body>
 
-    <div class="top-bar">✨ Free Cash On Delivery Nationwide ✨</div>
+    <div class="top-bar">✨ LUXURY REDEFINED • PREMIUM LONG-LASTING FRAGRANCES ✨</div>
 
-    <!-- Sticky Navigation -->
-    <nav>
-        <a href="#" class="nav-logo">AS5 FRAGRANCE</a>
-        <a href="https://wa.me/923111032801" class="nav-btn" target="_blank"><i class="fab fa-whatsapp"></i> Order</a>
-    </nav>
-
-    <!-- Hero Header -->
     <header>
-        <h1 class="brand-title">AS5 FRAGRANCE</h1>
-        <p class="tagline">Luxury • Long-Lasting • Artisanal</p>
-        <div class="cta-container">
-            <a href="https://wa.me/923111032801?text=Hello%20AS5%20Fragrance,%20I%20want%20to%20order" class="btn btn-gold" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Order</a>
-            <a href="https://tiktok.com/@as5.fragrances" class="btn btn-outline" target="_blank"><i class="fab fa-tiktok"></i> TikTok Profile</a>
+        <a href="#" class="nav-logo">
+            <img src="Circle Crop Logo_20260715_121844_0001.png" alt="AS5 Logo">
+            <span>AS5 FRAGRANCE</span>
+        </a>
+        <div class="nav-contact">
+            <a href="https://wa.me/923000000000" target="_blank"><i class="fab fa-whatsapp"></i> Order Now</a>
         </div>
     </header>
 
-    <!-- Trust Badges -->
+    <section class="hero">
+        <h1 class="hero-title">AS5 Fragrance Collection</h1>
+        <p class="hero-tagline">Exquisite Scents Crafted for Elegance & Distinction</p>
+    </section>
+
     <div class="features">
-        <div class="feature-item"><i class="fas fa-gem"></i> Premium Oils</div>
-        <div class="feature-item"><i class="fas fa-clock"></i> 12+ Hours Lasting</div>
-        <div class="feature-item"><i class="fas fa-truck"></i> Cash on Delivery</div>
+        <div class="feature-item"><i class="fas fa-check-circle" style="color:var(--gold-primary)"></i> 100% Pure Oils</div>
+        <div class="feature-item"><i class="fas fa-shipping-fast" style="color:var(--gold-primary)"></i> Fast Delivery Across Pakistan</div>
+        <div class="feature-item"><i class="fas fa-shield-alt" style="color:var(--gold-primary)"></i> Premium Packaging</div>
     </div>
 
-    <!-- Main Store Section -->
     <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">The Signature Collection</h2>
-            <p class="section-subtitle">Select Bottle Size Below</p>
-        </div>
-
-        <!-- Size Category Filters -->
-        <div class="category-tabs">
-            <button class="tab-btn active" onclick="switchCategory('5ml')">5ml Testers</button>
-            <button class="tab-btn" onclick="switchCategory('15ml')">15ml Travel Spray</button>
-            <button class="tab-btn" onclick="switchCategory('50ml')">50ml Full Bottle</button>
-        </div>
-
-        <!-- Product Cards Grid -->
-        <div class="grid" id="product-grid">
-            <!-- Cards rendering via JS below -->
-        </div>
-    </div>
-
-    <!-- Floating Quick Buttons -->
-    <div class="floating-socials">
-        <a href="https://tiktok.com/@as5.fragrances" class="social-float tiktok-float" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/923111032801" class="social-float whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">AS5 FRAGRANCE</div>
-        <div class="socials">
-            <a href="https://instagram.com/as5.fragrances" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.com/@as5.fragrances" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="tel:03111032801"><i class="fas fa-phone"></i></a>
-        </div>
-        <p class="copyright">&copy; 2026 AS5 Fragrance. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // 6 Perfumes List
-        const products = [
-            { name: "Velvet Rush", img: "velvet-rush.jpg" },
-            { name: "Rose Noir", img: "rose-noir.jpg" },
-            { name: "Desire Gold", img: "desire-gold.jpg" },
-            { name: "Oro Fusion", img: "oro-fusion.jpg" },
-            { name: "Murshid", img: "murshid.jpg" },
-            { name: "Savi-7", img: "savi7.jpg" }
-        ];
-
-        // Category Prices (Aap jab chahein yahan price badal sakte hain)
-        const prices = {
-            "5ml": "PKR 499",
-            "15ml": "PKR 1,199",
-            "50ml": "PKR 2,999"
-        };
-
-        function switchCategory(size) {
-            // Active Tab Style Change
-            const tabs = document.querySelectorAll('.tab-btn');
-            tabs.forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // Render Product Cards
-            const grid = document.getElementById('product-grid');
-            grid.innerHTML = '';
-
-            products.forEach(p => {
-                const price = prices[size];
-                const msg = encodeURIComponent(`Hello AS5 Fragrance, I want to order ${p.name} (${size}) for ${price}`);
-                
-                const card = `
-                    <div class="card">
-                        <div class="card-img">
-                            <i class="fas fa-wine-bottle"></i>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <h3 class="card-title">${p.name}</h3>
-                                <div class="price-tag">${price}</div>
-                            </div>
-                            <a href="https://wa.me/923111032801?text=${msg}" class="buy-btn" target="_blank">
-                                <i class="fab fa-whatsapp"></i> Order ${size}
-                            </a>
+        <h2 class="section-title">Signature Fragrances</h2>
+        
+        <div class="grid">
+            
+            <!-- 1. Rose Noir -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="Gemini_Generated_Image_8hn8g78hn8g78hn8.jpeg" alt="Rose Noir">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Rose Noir</h3>
+                        <div class="price-box">
+                            <div class="price-row"><span>5ml Tester</span><span>Rs. 250</span></div>
+                            <div class="price-row"><span>15ml Tester</span><span>Rs. 750</span></div>
+                            <div class="price-row"><span>50ml Perfume</span><span>Rs. 2,750</span></div>
                         </div>
                     </div>
-                `;
-                grid.innerHTML += card;
-            });
-        }
+                    <a href="https://wa.me/923000000000?text=I%20want%20to%20order%20Rose%20Noir" class="buy-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
 
-        // Initial Page Load
-        switchCategory('5ml');
-    </script>
+            <!-- 2. Oro Fusion -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="Gemini_Generated_Image_8ygaej8ygaej8yga.jpeg" alt="Oro Fusion">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Oro Fusion</h3>
+                        <div class="price-box">
+                            <div class="price-row"><span>5ml Tester</span><span>Rs. 250</span></div>
+                            <div class="price-row"><span>15ml Tester</span><span>Rs. 750</span></div>
+                            <div class="price-row"><span>50ml Perfume</span><span>Rs. 2,999</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923000000000?text=I%20want%20to%20order%20Oro%20Fusion" class="buy-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 3. Velvet Rush -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="Gemini_Generated_Image_xev4dsxev4dsxev4.jpeg" alt="Velvet Rush">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Velvet Rush</h3>
+                        <div class="price-box">
+                            <div class="price-row"><span>5ml Tester</span><span>Rs. 350</span></div>
+                            <div class="price-row"><span>15ml Tester</span><span>Rs. 1,200</span></div>
+                            <div class="price-row"><span>50ml Perfume</span><span>Rs. 3,499</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923000000000?text=I%20want%20to%20order%20Velvet%20Rush" class="buy-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 4. Savi-7 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="Gemini_Generated_Image_82ya4g82ya4g82ya.jpeg" alt="Savi-7">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Savi-7</h3>
+                        <div class="price-box">
+                            <div class="price-row"><span>5ml Tester</span><span>Rs. 250</span></div>
+                            <div class="price-row"><span>15ml Tester</span><span>Rs. 750</span></div>
+                            <div class="price-row"><span>50ml Perfume</span><span>Rs. 2,999</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923000000000?text=I%20want%20to%20order%20Savi-7" class="buy-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 5. Royal Ember -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="Gemini_Generated_Image_hoznkkhoznkkhozn.jpeg" alt="Royal Ember">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Royal Ember</h3>
+                        <div class="price-box">
+                            <div class="price-row"><span>5ml Tester</span><span>Rs. 250</span></div>
+                            <div class="price-row"><span>15ml Tester</span><span>Rs. 750</span></div>
+                            <div class="price-row"><span>50ml Perfume</span><span>Rs. 2,499</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923000000000?text=I%20want%20to%20order%20Royal%20Ember" class="buy-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- 6. Velvet Desire (Desire Gold Image) -->
+            <!-- Note: Agar kisi product ko Out of Stock karna ho, toh card class mein ' out-of-stock' likh dein -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="Gemini_Generated_Image_8l8cdi8l8cdi8l8c.jpeg" alt="Velvet Desire">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <h3 class="card-title">Velvet Desire</h3>
+                        <div class="price-box">
+                            <div class="price-row"><span>5ml Tester</span><span>Rs. 300</span></div>
+                            <div class="price-row"><span>15ml Tester</span><span>Rs. 1,000</span></div>
+                            <div class="price-row"><span>50ml Perfume</span><span>Rs. 2,999</span></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/923000000000?text=I%20want%20to%20order%20Velvet%20Desire" class="buy-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 <span>AS5 Fragrance</span>. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
